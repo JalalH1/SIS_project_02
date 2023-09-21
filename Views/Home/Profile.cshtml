@@ -1,0 +1,24 @@
+﻿@model List<User>;
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div>
+    <h2>Hello, welcome to your account!</h2>
+    <br />
+    <form asp-action="UserSearch">
+        <label for="search">Search Users:</label>
+        <input type="text" id="search" name="search" />
+        <button id="searchButton">Search</button>
+    </form>
+    <br />
+    <br />
+    <ul id="userList">
+        @foreach (var item in Model)
+        {
+            <li>@item.FirstName @item.LastName <form asp-action="UserDelete"><input type="hidden" value="@item.Id" name="Id" id="Id" /><button>Delete</button></form></li>
+            <br />
+        }
+    </ul>
+</div>

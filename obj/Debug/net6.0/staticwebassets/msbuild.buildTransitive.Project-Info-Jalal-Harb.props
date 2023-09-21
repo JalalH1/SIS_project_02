@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Project-Info-Jalal-Harb.props" />
+</Project>
